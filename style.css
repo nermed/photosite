@@ -70,6 +70,34 @@ img{
 .button:hover{
     opacity: 0.8;
 }
+.button-plus{
+  margin-bottom: 4rem;
+  text-decoration: none;
+  color: whitesmoke;
+  display: flex;
+  justify-content: center;
+  font-size: 1.3rem;
+  margin-top: 0.5rem;
+}
+.plus{
+  width: 12rem;
+  position: absolute;
+  display: flex;
+  background: rgb(214, 55, 55);
+  left: 50%;
+  transform: translate(-50%, -30%);
+  justify-content: center;
+  border-radius: 2rem;
+  height: 2.5rem;
+  margin-bottom: 5rem;
+}
+.plus:hover{
+    background: rgb(126, 77, 77);
+    border-color: rgb(135, 139, 139);
+}
+.button-plus:hover{
+  color: rgb(12, 7, 7);
+}
 @media(max-width: 700px) {
     .card{
         display: block;

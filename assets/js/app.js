@@ -51,7 +51,7 @@
 function compte_a_rebours(){
 var compte_a_rebours = document.getElementById("compte_a_rebours");
 // la date à partir de laquelle on compte
-var cible = new Date("February 01, 2021 20:57:00");
+var cible = new Date("February 11, 2021 21:00:00");
 var timer_is_on = 0;
 var aujourdhui = new Date();
 

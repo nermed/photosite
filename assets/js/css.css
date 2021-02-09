@@ -84,3 +84,43 @@
     transform: translateY(100%);
     display: inline-block;
   }
+  /* .direct {
+    cursor: pointer;
+    font-size: 10rem;
+    text-decoration: none;
+    color:beige;
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -30%);
+  } */
+  @media(max-width: 700px) {
+    nav {
+    display: block;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 10vh;
+  }
+    .landing{
+        min-height: 100vh;
+        width: 100%;
+    }
+    .nav-links {
+    display: block;
+    list-style: none;
+  }
+  .nav-links li {
+    font-size: 1.2rem;
+  }
+  .big-text {
+    font-size: 2.5rem;
+    color: rgb(255, 255, 255);
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -30%);
+  }
+  .intro-text {
+    font-size: 1rem;
+    padding-left: 0.5rem;
+  }
+}

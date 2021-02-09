@@ -1,141 +1,80 @@
-// import React,{Component} from 'react'
-// import ReactDOM from 'react-dom'
-//
-// const couleur = {
-//     dark : {
-//     background : '#000',
-//     color : '#FFF',
-//     border : 'none'
-//     },
-//     blue: {
-//         color: '#98BBD1'
-//     }
-// }
-//
-// class LikeButton extends React.Component{
-//     state = {
-//             likes: this.props.likes || 0,
-//             isLiked: this.props.isLiked || false
-//         };
-//     handleClick = () => {
-//         const isLiked = this.state.isLiked;
-//         const likes = this.state.likes + (isLiked ? -1 : 1);
-//
-//         this.setState({likes, isLiked : !isLiked });
-//     }
-//     render(){
-//         return (
-//             <button style = {couleur.dark} onClick = {this.handleClick}>
-//             {this.state.likes}&nbsp;
-//             <i style={couleur.blue} className = {this.state.isLiked ? "fas fa-thumbs-up" : "far fa-thumbs-up"}></i>
-//             &nbsp;
-//             {this.state.isLiked ? "Je n'aime plus" : "J'aime "}
-//             </button>
-//         )
-//         /*return React.createElement(
-//             "button",
-//             {onClick:() => this.handleClick()},
-//             this.state.likes,
-//             " ",
-//             React.createElement('i', {className: this.state.isLiked ? "fas fa-thumbs-up" : "far fa-thumbs-up"}),
-//             " ",
-//             this.state.isLiked ? "Je n'aime plus" : "J'aime !",
-//         );*/
-//     }
-// }
-//
-// const button = document.querySelectorAll('span.button').forEach(function(span){
-//     ReactDOM.render(React.createElement(LikeButton), span);
-// });
-//
-function compte_a_rebours(){
-var compte_a_rebours = document.getElementById("compte_a_rebours");
-// la date à partir de laquelle on compte
-var cible = new Date("February 11, 2021 21:00:00");
-var timer_is_on = 0;
-var aujourdhui = new Date();
+function compte_a_rebours() {
+    var compte_a_rebours = document.getElementById("compte_a_rebours");
+    // la date à partir de laquelle on compte
+    var cible = new Date("February 11, 2021 21:00:00");
+    var timer_is_on = 0;
+    var aujourdhui = new Date();
 
-var total_secondes = (cible - aujourdhui) / 1000;
+    var total_secondes = (cible - aujourdhui) / 1000;
 
-var prefixe = "Affichage dans ";
-if (total_secondes < 0)
-{
-    prefixe = "Compte à rebours terminé il y a "; // On modifie le préfixe si la différence est négatif
-    //total_secondes = Math.abs(total_secondes); // On ne garde que la valeur absolue
-    clearTimeout(actualisation);
-    timer_is_on = 0;
-}
+    var prefixe = "Affichage dans ";
+    if (total_secondes < 0) {
+        prefixe = "Compte à rebours terminé il y a "; // On modifie le préfixe si la différence est négatif
+        //total_secondes = Math.abs(total_secondes); // On ne garde que la valeur absolue
+        clearTimeout(actualisation);
+        timer_is_on = 0;
+    }
 
-    if (total_secondes > 0)
-    {
+    if (total_secondes > 0) {
         var jours = Math.floor(total_secondes / (60 * 60 * 24));
         var heures = Math.floor((total_secondes - (jours * 60 * 60 * 24)) / (60 * 60));
         var minutes = Math.floor((total_secondes - ((jours * 60 * 60 * 24 + heures * 60 * 60))) / 60);
         var secondes = Math.floor(total_secondes - ((jours * 60 * 60 * 24 + heures * 60 * 60 + minutes * 60)));
 
         var et = "et";
-            var mot_jour = "jours,";
-            var mot_heure = "heures,";
-            var mot_minute = "minutes,";
-            var mot_seconde = "secondes";
+        var mot_jour = "jours,";
+        var mot_heure = "heures,";
+        var mot_minute = "minutes,";
+        var mot_seconde = "secondes";
 
-            if (jours == 0)
-            {
-                jours = '';
-                mot_jour = '';
-            }
-            else if (jours == 1)
-            {
-                mot_jour = "jour,";
-            }
+        if (jours == 0) {
+            jours = '';
+            mot_jour = '';
+        }
+        else if (jours == 1) {
+            mot_jour = "jour,";
+        }
 
-            if (heures == 0)
-            {
-                heures = '';
-                mot_heure = '';
-            }
-            else if (heures == 1)
-            {
-                mot_heure = "heure,";
-            }
+        if (heures == 0) {
+            heures = '';
+            mot_heure = '';
+        }
+        else if (heures == 1) {
+            mot_heure = "heure,";
+        }
 
-            if (minutes == 0)
-            {
-                minutes = '';
-                mot_minute = '';
-            }
-            else if (minutes == 1)
-            {
-                mot_minute = "minute,";
-            }
+        if (minutes == 0) {
+            minutes = '';
+            mot_minute = '';
+        }
+        else if (minutes == 1) {
+            mot_minute = "minute,";
+        }
 
-            if (secondes == 0)
-            {
-                secondes = '';
-                mot_seconde = '';
-                et = '';
-            }
-            else if (secondes == 1)
-            {
-                mot_seconde = "seconde";
-            }
+        if (secondes == 0) {
+            secondes = '';
+            mot_seconde = '';
+            et = '';
+        }
+        else if (secondes == 1) {
+            mot_seconde = "seconde";
+        }
 
-            if (minutes == 0 && heures == 0 && jours == 0)
-            {
-                et = "";
-            }
+        if (minutes == 0 && heures == 0 && jours == 0) {
+            et = "";
+        }
 
-            compte_a_rebours.innerHTML = prefixe + jours + ' ' + mot_jour + ' ' + heures + ' ' + mot_heure + ' ' + minutes + ' ' + mot_minute + ' ' + et + ' ' + secondes + ' ' + mot_seconde;
+        compte_a_rebours.innerHTML = prefixe + jours + ' ' + mot_jour + ' ' + heures + ' ' + mot_heure + ' ' + minutes + ' ' + mot_minute + ' ' + et + ' ' + secondes + ' ' + mot_seconde;
 
-            var actualisation = setTimeout("compte_a_rebours();", 1000);
-            timer_is_on = 1;
+        var actualisation = setTimeout("compte_a_rebours();", 1000);
+        timer_is_on = 1;
     }
     else // Si total_secondes == 0 (puisque l'on a prit sa valeur absolue)
     {
         compte_a_rebours.innerHTML = 'Enfin il est temps!';
         const tl = gsap.timeline({ defaults: { ease: "power1.out" } });
 
-        tl.to("#compte_a_rebours", { y: "0%", duration: 2});
+        tl.to("#compte_a_rebours", { y: "0%", duration: 2 });
         tl.to(".slider", { y: "-100%", duration: 2.5, delay: 0.5 });
         tl.to("#compte_a_rebours", { y: "-100%", duration: 2 }, "-=2");
         tl.fromTo(".affiche", { opacity: 0 }, { opacity: 1, duration: 1 });

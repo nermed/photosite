@@ -1,0 +1,117 @@
+*{
+    padding: 0;
+    margin: 0;
+    /* box-sizing: border-box; */
+  }
+  body{
+    background-color: #0D0D0D;
+    width: 100%;
+    /* height: 100vh; */
+  }
+  /*Header*/
+  nav{
+    display:flex;
+    justify-content: space-between;
+    align-content: center;
+    margin-top: 0rem;
+    background-color: #7F2020;
+  }
+  nav img{
+    padding-left: 5rem;
+    width: 2rem;
+    image-resolution: snap;
+  }
+  nav ul{
+    display: flex;
+    justify-content: space-between;
+    width: 40rem;
+    padding-right: 5rem;
+  }
+  nav ul li {
+    justify-content: space-between;
+    text-decoration: none;
+    padding-top: 0.5rem;
+    list-style: none;
+    font-size: 1.5rem;
+    color: black;
+  }
+  nav ul li:hover{
+    cursor: pointer;
+    background-color: #4B4A4A;
+  }
+  /* Fin Header*/
+  main {
+    margin-bottom: 2rem;
+  }
+  /*Intro*/
+  .intro {
+    font-size: 2rem;
+    font-weight: bold;
+    color: white;
+    position: absolute;
+    top: 20%;
+    right: 40%;
+    margin-bottom: 5rem;
+    /* right: translate(50deg); */
+  }
+  .first_text{
+    color: white;
+    font-size: 1.5rem;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: 0.5s all ease-in-out;
+    position: absolute;
+    top: 40%;
+    width: 85%;
+    margin-left: 7rem;
+    display: flex;
+    justify-content: space-between;
+  }
+  .first_appear {
+    color: white;
+    font-size: 1.5rem;
+    /* opacity: 0;
+    transform: translateY(20px);
+    transition: 0.5s all ease-in-out; */
+    position: absolute;
+    top: 40%;
+    width: 85%;
+    margin-left: 7rem;
+    display: flex;
+    justify-content: space-between;
+    opacity: 1;
+    transform: translateY(0px);
+  }
+  .first_text_droit, .first_text_gauche {
+    width: 32rem;
+  }
+  /*Fin Intro*/
+  /*Footer*/
+  footer{
+    background-color: #7F2020;
+    bottom: 0%;
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* align-content: center; */
+  }
+  /* Footer Area */
+  footer.footer-area{
+      padding: 1rem 0;
+      /*background: #C3CAC6;*/
+  }
+  footer.footer-area .social h5{
+      font: normal 500 23px/30px;
+  }
+  footer.footer-area .social a>i{
+      font-size: 22px;
+      padding: 1rem;
+      color: var(--border-color);
+  }
+  footer.footer-area .social a:hover > i{
+      color: #084B8A;
+  }
+  /* End Footer Area*/
+  
